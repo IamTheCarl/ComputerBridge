@@ -16,19 +16,19 @@ Step 1: Open your command-line and browse to the folder where you extracted the 
 
 Step 2: You're left with a choice.
 If you prefer to use Eclipse:
-1. Run the following command: `gradlew genEclipseRuns` (`./gradlew genEclipseRuns` if you are on Mac/Linux)
+1. Run the following command: `./gradlew genEclipseRuns`
 2. Open Eclipse, Import > Existing Gradle Project > Select Folder 
    or run `gradlew eclipse` to generate the project.
 
 If you prefer to use IntelliJ:
 1. Open IDEA, and import project.
 2. Select your build.gradle file and have it import.
-3. Run the following command: `gradlew genIntellijRuns` (`./gradlew genIntellijRuns` if you are on Mac/Linux)
+3. Run the following command: `./gradlew genIntellijRuns`
 4. Refresh the Gradle Project in IDEA if required.
 
 If at any point you are missing libraries in your IDE, or you've run into problems you can 
 run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+(this does not affect your code) and then start the process again.
 
 Mapping Names:
 =============================
@@ -40,7 +40,21 @@ https://github.com/MinecraftForge/MCPConfig/blob/master/Mojang.md
 
 Additional Resources: 
 =========================
-Community Documentation: http://mcforge.readthedocs.io/en/latest/gettingstarted/  
-LexManos' Install Video: https://www.youtube.com/watch?v=8VEdtQLuLO0  
-Forge Forum: https://forums.minecraftforge.net/  
-Forge Discord: https://discord.gg/UvedJ9m  
+Community Documentation: https://docs.minecraftforge.net/en/latest/gettingstarted/
+LexManos' Install Video: https://youtu.be/8VEdtQLuLO0
+Forge Forums: https://forums.minecraftforge.net/
+Forge Discord: https://discord.minecraftforge.net/
+
+Notes from The Carl
+
+========================
+
+Hey there, so this repository is special because I made it.
+Yes, this is built off the standard MDK (Minecraft Development Kit) but I use Nix to manage all the dependencies.
+If you're on Linux, [install Nix](https://nixos.org/download/). From there you can run `nix-shell` to get a shell with
+all the tools you need to build and develop this mod. It even sets you up with IntelliJ. By the way, it's a reasonably
+sanitary environment, so you can easily switch Java versions and other dependencies without it conflicting with other
+projects.
+
+If you're on Windows, well good luck. You have to install everything manually. Go look at the `shell.nix` at the root
+of this project to get a hint as to what needs to be installed.
