@@ -24,6 +24,12 @@ pkgs.mkShell {
     rust_platform.bindgenHook
     pkgs.crate2nix
     pkgs.jdk8
+
+    # Normally I am very against including an IDE into a development environment,
+    # but seeing how much the Forge community is tied into this sucker, I don't
+    # think I really have a choice. Sorry about the 20 minute download to bring
+    # up this repo.
+    pkgs.jetbrains.idea-community-src
   ];
 
   # Set environment variables
